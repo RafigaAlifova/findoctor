@@ -6,14 +6,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-
+//
 namespace findoctor.Controllers
 {
-    public class HomeController : Controller
+    public class DoctorController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<DoctorController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public DoctorController(ILogger<DoctorController> logger)
         {
             _logger = logger;
         }

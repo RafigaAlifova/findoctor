@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Core.CrossCuttingConcerns.Caching.Microsoft
 {
-    public class MemoryCacheManager
+    public class MemoryCacheManager:ICacheManager
     {
         IMemoryCache _memoryCache;
 

@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using Core.Utilities.Results.Abstract;
+﻿using Core.Utilities.Results.Abstract;
 using Entities.Concrete;
-//
-namespace Business.Abstract
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
+
+namespace findoctor.Services.Abstract
 {
     public interface IDoctorService
     {
@@ -12,8 +14,5 @@ namespace Business.Abstract
         IResult Add(Doctor doctor);
         IResult Update(Doctor doctor);
         IResult Delete(Doctor doctor);
-
-
-
     }
 }

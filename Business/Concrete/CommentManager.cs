@@ -24,6 +24,12 @@ namespace Business.Concrete
             return new SuccessResult();
 
         }
+       
+        public IResult Delete(Comment comment)
+        {
+            _commentDal.Delete(comment);
+            return new SuccessResult();
+        }
 
         public IDataResult<List<Comment>> GetAll(Expression<Func<Comment, bool>> filter = null)
         {

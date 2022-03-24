@@ -1,42 +1,44 @@
-﻿using Business.Abstract;
-using Core.Utilities.Results.Abstract;
+﻿using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
-using DataAccess.Abstract;
 using Entities.Concrete;
+using findoctor.Services.Abstract;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
-namespace Business.Concrete
+namespace findoctor.Services.Concrete
 {
-    public class PatientManger : IPatientService
+    public class PatientService : IPatientService
     {
-        private readonly IPatientDal _patientDal;
-        public PatientManger(IPatientDal patientDal)
+        private readonly Business.Abstract.IPatientService _patientService;
+
+        public PatientService(Business.Abstract.IPatientService patientService)
         {
-            _patientDal = patientDal;
+            _patientService = patientService;
+                
         }
         public IResult Add(Patient patient)
         {
-            _patientDal.Add(patient);
+            _patientService.Add(patient);
             return new SuccessResult();
-
         }
 
         public IResult Delete(Patient patient)
         {
-            _patientDal.Delete(patient);
+            _patientService.Delete(patient);
             return new SuccessResult();
         }
 
         public IDataResult<List<Patient>> GetAll(Expression<Func<Patient, bool>> filter = null)
         {
-            return new SuccessDataResult<List<Patient>>(_patientDal.GetAll(filter));
+            return _patientService.GetAll(filter);
         }
 
         public IResult Update(Patient patient)
         {
-            _patientDal.Update(patient);
+            _patientService.Update(patient);
             return new SuccessResult();
         }
     }

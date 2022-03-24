@@ -1,9 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using Core.Utilities.Results.Abstract;
+﻿using Core.Utilities.Results.Abstract;
 using Entities.Concrete;
-namespace Business.Abstract
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
+
+namespace findoctor.Services.Abstract
 {
     public interface ICommentService
     {
@@ -11,7 +14,5 @@ namespace Business.Abstract
         IResult Add(Comment comment);
         IResult Update(Comment comment);
         IResult Delete(Comment comment);
-
-
     }
 }
